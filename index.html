@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wide World Travel</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body ng-app="WorldTravel">
+  <div ng-controller="bookCtrl" ng-init="getTrips()">
+    <h1>Trips</h1>
+    <div ng-repeat="book in books">
+      <h4>{{book.title}}</h4>
+      <p>{{book.type}}</p>
+      <p>{{book.price}}</p>
+    </div>
+  </div>
+  <!-- 3rd party libs -->
+  <script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="/lib/bower_components/angularfire/dist/angularfire.min.js"></script>
+  <!-- app specific files -->
+  <script type="text/javascript" src="app/app.js"></script>
+  <!-- controllers -->
+  <script type="text/javascript" src="app/controllers/bookCtrl.js"></script>
+</body>
+</html>
