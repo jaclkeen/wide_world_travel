@@ -1,19 +1,10 @@
 "use strict"
 
-app.controller("bookCtrl", function($scope, $q, $http){
+app.controller("bookCtrl", function($scope, guideFactory){
+  $scope.books = []
 
-  $scope.getTrips = function(){
-    let trips = []
-    return $q(function(resolve, reject){
-      $http.get('../../data/guides.json')
-      .success(function(coolTrips){
-        $scope.books = coolTrips.guides
-        resolve(coolTrips)
-      })
-      .error(function(error){
-        reject(error)
-      })
+  guideFactory.getTrips()
+    .then(function(datData){
+        $scope.books = datData.guides
     })
-  }
-
 })
